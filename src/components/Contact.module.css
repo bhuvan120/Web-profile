@@ -1,0 +1,115 @@
+.contact {
+  padding: var(--space-2xl) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.content {
+  max-width: 600px;
+}
+
+.content h2 {
+  margin-bottom: var(--space-md);
+  color: var(--text-primary);
+}
+
+.content > p {
+  font-size: var(--text-lg);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2xl);
+  line-height: var(--lh-relaxed);
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.contactCard {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.contactCard:hover {
+  border-color: var(--accent);
+  background-color: var(--bg-tertiary);
+  transform: translateY(-2px);
+}
+
+.contactIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.contactCard h3 {
+  font-size: var(--text-base);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.contactCard p {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.footer {
+  padding: var(--space-lg);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  text-align: center;
+}
+
+.footer p {
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+  color: var(--text-tertiary);
+}
+
+.footer a {
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.footer a:hover {
+  gap: var(--space-xs);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact {
+    padding: var(--space-xl) 0;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .content h2 {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  .content > p {
+    font-size: var(--text-base);
+  }
+
+  .contactCard {
+    padding: var(--space-md);
+  }
+
+  .contactIcon {
+    font-size: 1.25rem;
+  }
+}
