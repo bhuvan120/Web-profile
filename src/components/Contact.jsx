@@ -12,7 +12,7 @@ export default function Contact() {
 
           <div className={styles.contactGrid}>
             <a 
-              href="mailto:hello@example.com" 
+              href="mailto:karanambhuvanesh@gmail.com" 
               className={styles.contactCard}
               aria-label="Send email to hello@example.com"
             >
@@ -24,7 +24,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://github.com/yourusername" 
+              href="https://github.com/bhuvan120" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.contactCard}
@@ -38,7 +38,7 @@ export default function Contact() {
             </a>
 
             <a 
-              href="https://linkedin.com/in/yourprofile" 
+              href="https://www.linkedin.com/in/karanambhuvanesh/" 
               target="_blank" 
               rel="noopener noreferrer" 
               className={styles.contactCard}
@@ -47,7 +47,7 @@ export default function Contact() {
               <span className={styles.contactIcon}>💼</span>
               <div>
                 <h3>LinkedIn</h3>
-                <p>KaranamBhuvanesh</p>
+                <p>Karanam Bhuvanesh</p>
               </div>
             </a>
           </div>
