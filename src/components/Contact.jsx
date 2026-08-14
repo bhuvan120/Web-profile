@@ -19,7 +19,7 @@ export default function Contact() {
               <span className={styles.contactIcon}>✉</span>
               <div>
                 <h3>Email</h3>
-                <p>hello@example.com</p>
+                <p>karanambhuvaneh@example.com</p>
               </div>
             </a>
 
@@ -33,7 +33,7 @@ export default function Contact() {
               <span className={styles.contactIcon}>⚙</span>
               <div>
                 <h3>GitHub</h3>
-                <p>yourusername</p>
+                <p>bhuvan120</p>
               </div>
             </a>
 
@@ -47,14 +47,14 @@ export default function Contact() {
               <span className={styles.contactIcon}>💼</span>
               <div>
                 <h3>LinkedIn</h3>
-                <p>yourprofile</p>
+                <p>KaranamBhuvanesh</p>
               </div>
             </a>
           </div>
 
           <div className={styles.footer}>
             <p>Built with React + Vite. No framework bloat, no tracking, just clean code.</p>
-            <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/bhuvan120/Web-profile" target="_blank" rel="noopener noreferrer">
               View source on GitHub →
             </a>
           </div>
