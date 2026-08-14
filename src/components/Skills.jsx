@@ -5,7 +5,7 @@ export default function Skills() {
     {
       category: 'What I build',
       description: 'Modern, performant user experiences',
-      skills: ['React', 'TypeScript', 'CSS/Tailwind', 'Express.js' 'Responsive Design', 'Web Performance']
+      skills: ['React', 'CSS/Tailwind', 'Express.js', 'Responsive Design', 'Web Performance']
     },
     {
       category: 'What I understand',
