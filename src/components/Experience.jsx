@@ -1,68 +1,98 @@
 import styles from './Experience.module.css';
 
-export default function Experience() {
-  const timeline = [
-    {
-      year: '2021',
-      period: 'Freshman year',
-      title: 'Started learning web development',
-      description: 'Took first CS course. Built a todo app in vanilla JavaScript. Realized I enjoyed frontend more than algorithms (for now).',
-      color: 'blue'
-    },
-    {
-      year: '2022',
-      period: 'Junior year',
-      title: 'First internship — Frontend developer',
-      description: 'Worked on internal tools at a startup. Migrated legacy jQuery to React. Learned the cost of technical debt and why code reviews matter.',
-      color: 'purple'
-    },
-    {
-      year: '2023',
-      period: 'Summer',
-      title: 'Freelance projects',
-      description: 'Built 3 client websites. Learned real-world constraints: timelines, scope creep, and communication. Shipped products faster than in larger teams.',
-      color: 'green'
-    },
-    {
-      year: '2025',
-      period: 'Fall',
-      title: 'Graduated ( Computer Science)',
-      description: 'Thesis on optimizing React re-renders. Realized frameworks are just tools — fundamentals matter more.',
-      color: 'blue'
-    },
-    {
-      year: '2026',
-      period: 'Present',
-      title: 'Building in public',
-      description: 'Exploring full-stack development. Working on personal projects, writing about optimization, and mentoring junior developers.',
-      color: 'green'
-    }
-  ];
+const timeline = [
+  {
+    year: '2025',
+    title: 'B.Tech — Computer Science (AI)',
+    detail: 'Parul University',
+    description: 'Completed a Computer Science degree with AI specialization, building the foundation for software engineering, data-driven systems and intelligent applications.',
+    color: 'blue',
+  },
+  {
+    year: 'Sep 2025 – Mar 2026',
+    title: 'Full-Stack Developer Intern — SocialTek',
+    detail: 'React · Spring Boot · MySQL',
+    description: 'Developed and maintained full-stack web features, built reusable React components and worked on API and database optimizations across product workflows.',
+    color: 'purple',
+  },
+  {
+    year: '2026 – Present',
+    title: 'Freelance Development + AI Exploration',
+    detail: 'React · Node.js · AI Apps',
+    description: 'Working independently on client projects while expanding into AI-powered software, LLM integrations and RAG-focused experimentation.',
+    color: 'green',
+  },
+];
 
+const strengths = [
+  'AI-focused full-stack developer exploring LLMs, RAG and intelligent applications.',
+  'Hands-on React and Node.js experience with API and database integration.',
+  'Freelance experience building websites and application interfaces for clients.',
+  'Strong interest in modern AI product development and practical GenAI workflows.',
+];
+
+export default function Experience() {
   return (
-    <section className={styles.experience} id="experience" aria-label="Experience timeline">
+    <section className={styles.experience} id="about" aria-label="About and career experience">
       <div className="container">
-        <div className={styles.header}>
-          <h2>Journey</h2>
-          <p>
-            Learning path. Real work, real mistakes, real growth.
-          </p>
+        <div className={styles.topGrid}>
+          <div className={styles.aboutCard}>
+            <span className="kicker">About</span>
+            <h2>Full-stack developer building modern products and AI experiences.</h2>
+            <p>
+              I am a B.Tech graduate in Computer Science with AI specialization from Parul University, currently positioning myself as a
+              Full-Stack Developer and AI Developer focused on React, Node.js, API design, databases and intelligent product experiences.
+            </p>
+            <p>
+              My work blends frontend engineering with backend development, database optimization and AI-powered functionality. I enjoy building
+              practical software products and experimenting with LLM-based systems, chatbots, and retrieval-augmented generation workflows.
+            </p>
+          </div>
+
+          <div className={styles.snapshotCard}>
+            <h3>Career Snapshot</h3>
+            <ul>
+              {strengths.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
 
-        <div className={styles.timeline}>
-          {timeline.map((item, idx) => (
-            <div key={idx} className={styles.timelineItem}>
-              <div className={`${styles.marker} ${styles[item.color]}`} />
-              <div className={styles.content}>
-                <div className={styles.meta}>
-                  <span className={styles.year}>{item.year}</span>
-                  <span className={styles.period}>{item.period}</span>
+        <div className={styles.timelineWrap} id="experience">
+          <div className="sectionHeader">
+            <span className="kicker">Experience</span>
+            <h2>Professional journey.</h2>
+          </div>
+
+          <div className={styles.timeline}>
+            {timeline.map((item) => (
+              <div key={item.year} className={styles.timelineItem}>
+                <div className={`${styles.marker} ${styles[item.color]}`} />
+                <div className={styles.content}>
+                  <div className={styles.metaRow}>
+                    <span className={styles.year}>{item.year}</span>
+                    <span className={styles.detail}>{item.detail}</span>
+                  </div>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
                 </div>
-                <h3 className={styles.title}>{item.title}</h3>
-                <p className={styles.description}>{item.description}</p>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        <div className={styles.educationCard}>
+          <div>
+            <span className={styles.label}>Education</span>
+            <h3>B.Tech — Computer Science (AI)</h3>
+            <p>Parul University</p>
+          </div>
+
+          <div className={styles.educationMeta}>
+            <span>2025</span>
+            <strong>CGPA: 7.32/10</strong>
+          </div>
         </div>
       </div>
     </section>

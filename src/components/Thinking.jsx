@@ -1,83 +1,77 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './Thinking.module.css';
 
 export default function Thinking() {
-  const articles = [
+  const focusAreas = [
     {
       id: 1,
-      title: 'How I approach debugging',
-      excerpt: 'The best debuggers don\'t jump to fixes. They ask questions first.',
-      content: `Debugging is detective work. When something breaks, my first instinct is not to search Stack Overflow. Instead, I:
-
-1. **Reproduce the issue consistently** — If I can't recreate it, I can't fix it.
-2. **Isolate the variable** — Does it happen in development but not production? On Chrome but not Firefox? This tells me where to look.
-3. **Add constraints** — Use console logs, browser DevTools, and network tabs. Let the data speak instead of guessing.
-4. **Never assume** — The bug is rarely where I think it is. A missing \`await\`, a stale closure, a race condition hiding in async code.
-5. **Write a test** — Once fixed, I write a test that would have caught this. Future me will thank present me.
-
-The mental model: Every bug is a system failure. The code didn't write itself wrong — my assumptions about how it works were incomplete.`,
-      readTime: '4 min'
+      title: 'AI Chatbots',
+      excerpt: 'AI-powered chatbot functionality for data-aware product experiences.',
+      content: 'I have worked with chatbot-style AI interactions where the system needs to respond in a way that is informed by application context, not just generic model output. This includes conversational experiences and practical user support flows connected to product data.',
+      readTime: '4 min',
     },
     {
       id: 2,
-      title: 'How I learn new tech',
-      excerpt: 'Learning frameworks is overrated. Understanding principles is underrated.',
-      content: `New tech gets announced every week. The mistake is trying to learn everything. Instead, I use this framework:
-
-1. **Start with the problem it solves** — Why does this technology exist? What does it fix? If I don't know the problem, I can't evaluate if it's worth learning.
-2. **Build something small** — Not a tutorial. A small project where I'm forced to read docs and hit errors.
-3. **Read the source or docs** — Tutorials hide implementation. I want to understand why decisions were made.
-4. **Steal patterns, not code** — What mental models does this tech introduce? How is error handling done? State management?
-5. **Teach it** — Writing about something or explaining it to someone else reveals gaps in my understanding.
-
-Example: Instead of learning "Next.js," I asked "Why would I choose Next.js over Create React App?" The answer (SSR, static generation, API routes) framed my entire learning approach.`,
-      readTime: '5 min'
+      title: 'RAG Systems',
+      excerpt: 'Retrieval-augmented generation is where context-aware AI becomes more useful.',
+      content: 'User Query → Embedding → Vector Database → Relevant Documents → Context → LLM → AI Response. I am currently exploring how retrieval, embeddings, chunking and vector storage can improve answer quality and relevance in real product workflows.',
+      readTime: '5 min',
     },
     {
       id: 3,
-      title: 'Optimizing React (re-renders, hooks)',
-      excerpt: 'Most React is not slow. Bad React is really obvious when you profile.',
-      content: `React performance is often blamed for being slow. Usually, it's not React. It's how React is used.
-
-**Understanding re-renders:**
-- React components re-render when their state or props change. This is fine.
-- React re-renders smartly — Virtual DOM diffing is incredibly fast for most use cases.
-- Real problems come from:
-  - **Inline functions** — \`onClick={() => doSomething()}\` creates a new function every render, breaking memoization.
-  - **Derived state** — Recalculating values from props on every render instead of memoizing with \`useMemo\`.
-  - **Missing dependencies** — Forgetting a dependency in \`useEffect\` causes stale closures and unexpected behavior.
-
-**My workflow:**
-1. **Profile first** — Use React DevTools Profiler. Don't optimize by gut feeling.
-2. **Use \`React.memo\` cautiously** — Only if a component re-renders unnecessarily with stable props.
-3. **Extract state down** — Move state as low as possible in the tree. Local state doesn't trigger parent re-renders.
-4. **Lazy load components** — Use \`React.lazy()\` for code splitting. Load only what the user sees.
-5. **Use keys correctly** — Keys should be unique and stable. Never use array index as a key.
-
-The best optimization is not rendering at all. If you don't need a component to re-render, don't render it.`,
-      readTime: '6 min'
-    }
+      title: 'LLM Applications',
+      excerpt: 'Using LLM APIs, prompt engineering and structured outputs in practical product design.',
+      content: 'I am exploring LLM APIs, prompt design, context-aware responses and AI application architecture. The goal is to build software that uses AI in a way that is useful, traceable and product-aware rather than purely experimental.',
+      readTime: '3 min',
+    },
+    {
+      id: 4,
+      title: 'AI Developer Journey',
+      excerpt: 'Traditional Web Development → Full Stack → AI Integration → RAG → Intelligent Applications.',
+      content: 'My direction is clear: I want to continue growing from full-stack engineering into intelligent software and AI-powered product development, with an emphasis on practical, real-world applications that combine frontend, backend and model-driven capabilities.',
+      readTime: '2 min',
+    },
   ];
 
-  const [expanded, setExpanded] = React.useState(null);
+  const [expanded, setExpanded] = useState(null);
+
   return (
-    <section className={styles.thinking} id="thinking" aria-label="Engineering thinking section">
+    <section className={styles.thinking} id="ai" aria-label="AI and engineering focus section">
       <div className="container">
-        <div className={styles.header}>
-          <h2>How I think</h2>
+        <div className="sectionHeader">
+          <span className="kicker">AI / GenAI</span>
+          <h2>Building with AI.</h2>
           <p>
-            Not just what I've built. How I approach problems, learn, and make decisions.
+            Exploring how modern AI can be integrated into real-world software products.
           </p>
         </div>
 
+        <div className={styles.architecture} aria-label="RAG architecture flow">
+          <div className={styles.flowRow}>
+            <span>User Query</span>
+            <span className={styles.arrow}>↓</span>
+            <span>Embedding</span>
+            <span className={styles.arrow}>↓</span>
+            <span>Vector Database</span>
+            <span className={styles.arrow}>↓</span>
+            <span>Relevant Documents</span>
+            <span className={styles.arrow}>↓</span>
+            <span>Context</span>
+            <span className={styles.arrow}>↓</span>
+            <span>LLM</span>
+            <span className={styles.arrow}>↓</span>
+            <span>AI Response</span>
+          </div>
+        </div>
+
         <div className={styles.articlesGrid}>
-          {articles.map((article) => (
+          {focusAreas.map((article) => (
             <article key={article.id} className={styles.articleCard}>
               <div className={styles.articleHeader}>
                 <h3 className={styles.articleTitle}>{article.title}</h3>
                 <span className={styles.readTime}>{article.readTime} read</span>
               </div>
-              
+
               <p className={styles.excerpt}>{article.excerpt}</p>
 
               <button

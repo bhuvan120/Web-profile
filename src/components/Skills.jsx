@@ -3,29 +3,61 @@ import styles from './Skills.module.css';
 export default function Skills() {
   const skillGroups = [
     {
-      category: 'What I build',
-      description: 'Modern, performant user experiences',
-      skills: ['React', 'CSS/Tailwind', 'Express.js', 'Responsive Design', 'Web Performance']
+      category: 'Frontend',
+      description: 'Interface design and user experiences built for performance and usability.',
+      skills: ['React.js', 'JavaScript', 'HTML5', 'CSS3', 'Responsive Design'],
     },
     {
-      category: 'What I understand',
-      description: 'Core concepts, not just frameworks',
-      skills: ['JavaScript fundamentals', 'Component architecture', 'State management', 'REST APIs', 'Database design']
+      category: 'Backend',
+      description: 'Server-side logic, APIs and product infrastructure.',
+      skills: ['Node.js', 'Express.js', 'Spring Boot', 'REST APIs'],
     },
     {
-      category: 'What I\'m improving',
-      description: 'Actively learning and practicing',
-      skills: ['Next.js & SSR', 'GraphQL', 'Testing (Jest, Vitest)', 'DevOps basics', 'System design']
-    }
+      category: 'Programming',
+      description: 'Core software development capabilities across modern product workflows.',
+      skills: ['JavaScript', 'Java', 'Python', 'SQL'],
+    },
+    {
+      category: 'Databases',
+      description: 'Schema design, optimization and working with relational systems.',
+      skills: ['MySQL', 'PostgreSQL', 'SQL Optimization'],
+    },
+    {
+      category: 'AI / GenAI',
+      description: 'Exploring real-world AI application architecture and product integration.',
+      skills: ['LLM Applications', 'AI Chatbots', 'RAG', 'Prompt Engineering', 'AI API Integration'],
+    },
+    {
+      category: 'Tools',
+      description: 'Development workflows and delivery practices used in real projects.',
+      skills: ['Git', 'GitHub', 'Postman', 'VS Code'],
+    },
+  ];
+
+  const principles = [
+    { title: 'Build', description: 'Create clean and scalable applications.' },
+    { title: 'Integrate', description: 'Connect frontend, backend, APIs and databases.' },
+    { title: 'Optimize', description: 'Improve performance, reliability and maintainability.' },
+    { title: 'Explore', description: 'Experiment with AI, LLMs and RAG to build smarter applications.' },
+  ];
+
+  const exploring = [
+    'Retrieval-Augmented Generation',
+    'Vector Databases',
+    'Embeddings',
+    'LLM Application Architecture',
+    'AI Agents',
+    'AI-powered developer tools',
   ];
 
   return (
     <section className={styles.skills} id="skills" aria-label="Skills section">
       <div className="container">
-        <div className={styles.header}>
-          <h2>Skills</h2>
+        <div className="sectionHeader">
+          <span className="kicker">Technical Skills</span>
+          <h2>Build systems. Integrate APIs. Explore AI.</h2>
           <p>
-            Not a exhaustive list. Focused on what I've built with, and what I understand deeply.
+            My work spans frontend engineering, backend services, database work and AI-powered product experiences.
           </p>
         </div>
 
@@ -34,16 +66,38 @@ export default function Skills() {
             <div key={idx} className={styles.group}>
               <h3 className={styles.groupTitle}>{group.category}</h3>
               <p className={styles.groupDesc}>{group.description}</p>
-              <ul className={styles.skillList}>
+              <div className={styles.skillList}>
                 {group.skills.map((skill, sidx) => (
-                  <li key={sidx} className={styles.skillItem}>
-                    <span className={styles.skillDot} />
+                  <span key={sidx} className={styles.skillItem}>
                     {skill}
-                  </li>
+                  </span>
                 ))}
-              </ul>
+              </div>
             </div>
           ))}
+        </div>
+
+        <div className={styles.bottomGrid}>
+          <div className={styles.principlesCard}>
+            <span className="kicker">How I Build</span>
+            <div className={styles.principlesWrap}>
+              {principles.map((item) => (
+                <div key={item.title} className={styles.principle}>
+                  <h3>{item.title}</h3>
+                  <p>{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={styles.exploringCard}>
+            <span className="kicker">Currently Exploring</span>
+            <ul>
+              {exploring.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

@@ -14,20 +14,14 @@ function App() {
       <Navbar />
       <main>
         <Landing />
-        <Skills />
-        <Projects />
         <Experience />
         <Thinking />
+        <Projects />
+        <Skills />
         <Contact />
       </main>
-      <footer style={{ 
-        padding: 'var(--space-lg)', 
-        textAlign: 'center', 
-        borderTop: '1px solid var(--border)',
-        color: 'var(--text-tertiary)',
-        fontSize: 'var(--text-sm)'
-      }}>
-        <p>© 2024 Your Name. All rights reserved.</p>
+      <footer className="siteFooter">
+        <p>© 2026 Karanam Bhuvanesh. Built with React and Vite.</p>
       </footer>
     </div>
   );

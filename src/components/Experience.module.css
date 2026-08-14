@@ -1,167 +1,217 @@
 .experience {
-  padding: var(--space-2xl) 0;
+  padding: clamp(4rem, 7vw, 6.5rem) 0;
   border-bottom: 1px solid var(--border);
 }
 
-.header {
-  margin-bottom: var(--space-2xl);
+.topGrid {
+  display: grid;
+  grid-template-columns: 1.3fr 0.7fr;
+  gap: 1.2rem;
+  margin-bottom: 2.5rem;
 }
 
-.header h2 {
-  margin-bottom: var(--space-md);
+.aboutCard,
+.snapshotCard,
+.educationCard,
+.content {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+}
+
+.aboutCard {
+  padding: 1.5rem;
+}
+
+.aboutCard h2 {
+  margin-bottom: 1rem;
+}
+
+.aboutCard p {
+  margin-bottom: 1rem;
+}
+
+.aboutCard p:last-child {
+  margin-bottom: 0;
+}
+
+.snapshotCard {
+  padding: 1.5rem;
+}
+
+.snapshotCard h3 {
+  margin-bottom: 1rem;
   color: var(--text-primary);
 }
 
-.header p {
-  font-size: var(--text-lg);
+.snapshotCard ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.snapshotCard li {
+  position: relative;
+  padding-left: 1rem;
   color: var(--text-secondary);
-  max-width: 500px;
+  line-height: 1.7;
+}
+
+.snapshotCard li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.7rem;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent-strong);
+}
+
+.timelineWrap {
+  margin-top: 2rem;
 }
 
 .timeline {
   position: relative;
-  padding: var(--space-lg) 0;
+  padding: 1rem 0 0;
 }
 
 .timeline::before {
   content: '';
   position: absolute;
-  left: 19px;
+  left: 18px;
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent) 0%, var(--border) 100%);
+  background: linear-gradient(180deg, rgba(124, 156, 255, 0.8), rgba(148, 163, 184, 0.12));
 }
 
 .timelineItem {
   display: flex;
-  gap: var(--space-lg);
-  margin-bottom: var(--space-xl);
+  gap: 1rem;
   position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .marker {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 3px solid var(--bg-primary);
   position: relative;
-  z-index: 2;
-  margin-top: 2px;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 3px solid rgba(7, 17, 31, 1);
 }
 
-.marker.blue {
-  background-color: #3b82f6;
-}
-
-.marker.purple {
-  background-color: #a855f7;
-}
-
-.marker.green {
-  background-color: #10b981;
-}
+.marker.blue { background: #5aa7ff; }
+.marker.purple { background: #a78bfa; }
+.marker.green { background: #7ce7b5; }
 
 .content {
   flex: 1;
-  padding: var(--space-md);
-  background-color: var(--bg-secondary);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  transition: all var(--transition-base);
+  padding: 1.2rem 1.25rem;
 }
 
-.timelineItem:hover .content {
-  border-color: var(--accent);
-  background-color: var(--bg-tertiary);
-  transform: translateX(8px);
-}
-
-.meta {
+.metaRow {
   display: flex;
-  gap: var(--space-md);
-  margin-bottom: var(--space-xs);
   align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .year {
+  color: var(--accent-strong);
   font-weight: 700;
-  font-size: var(--text-base);
-  color: var(--accent);
 }
 
-.period {
-  font-size: var(--text-sm);
-  color: var(--text-tertiary);
+.detail {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  color: var(--text-tertiary);
 }
 
-.title {
-  font-size: var(--text-lg);
+.content h3 {
+  margin-bottom: 0.45rem;
   color: var(--text-primary);
-  margin-bottom: var(--space-sm);
-  letter-spacing: -0.02em;
 }
 
-.description {
-  font-size: var(--text-sm);
+.content p {
+  margin: 0;
   color: var(--text-secondary);
-  line-height: var(--lh-relaxed);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .experience {
-    padding: var(--space-xl) 0;
+.educationCard {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1.25rem 1.4rem;
+}
+
+.label {
+  display: inline-block;
+  color: var(--accent-strong);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.educationCard h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.educationCard p {
+  margin: 0;
+}
+
+.educationMeta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.2rem;
+  color: var(--text-secondary);
+}
+
+.educationMeta span {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.educationMeta strong {
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+
+@media (max-width: 860px) {
+  .topGrid {
+    grid-template-columns: 1fr;
   }
 
-  .timeline::before {
-    left: 19px;
+  .educationCard {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  .timelineItem {
-    gap: var(--space-md);
-  }
-
-  .marker {
-    width: 40px;
-    height: 40px;
-  }
-
-  .content {
-    padding: var(--space-md);
-  }
-
-  .title {
-    font-size: var(--text-base);
+  .educationMeta {
+    align-items: flex-start;
   }
 }
 
-@media (max-width: 480px) {
-  .timeline::before {
-    left: 19px;
-  }
-
-  .timelineItem {
-    margin-bottom: var(--space-lg);
-  }
-
-  .marker {
-    width: 40px;
-    height: 40px;
-  }
-
+@media (max-width: 640px) {
   .content {
-    padding: var(--space-sm);
+    padding: 1rem;
   }
 
-  .title {
-    font-size: var(--text-base);
-  }
-
-  .description {
-    font-size: var(--text-xs);
+  .metaRow {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
