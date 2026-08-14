@@ -16,7 +16,7 @@ export default function Navbar() {
     <nav className={styles.navbar} role="navigation" aria-label="Main navigation">
       <div className={`container ${styles.navContainer}`}>
         <a href="#" className={styles.logo} aria-label="Home">
-          Your Name
+          Karanam Bhuvanesh
         </a>
 
         <button
