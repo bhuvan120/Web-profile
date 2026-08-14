@@ -14,7 +14,7 @@ export default function Landing() {
 
             <p className={styles.subtitle}>
               CS graduate. Full-stack engineer with focus on frontend. Built production systems
-              serving 10k+ users. Learn fast, ship thoughtfully.
+              serving users. Learn fast, ship thoughtfully.
             </p>
 
             <div className={styles.cta}>
