@@ -30,7 +30,7 @@ export default function Landing() {
           <div className={styles.meta}>
             <div className={styles.metaItem}>
               <span className={styles.metaLabel}>Skills</span>
-              <span className={styles.metaValue}>React, TypeScript, Full-stack</span>
+              <span className={styles.metaValue}>React, Express.js, Node.js,SQL, MongoDB,  Full-stack</span>
             </div>
             <div className={styles.metaItem}>
               <span className={styles.metaLabel}>Based in</span>
