@@ -3,7 +3,7 @@ import styles from './Experience.module.css';
 export default function Experience() {
   const timeline = [
     {
-      year: '2020',
+      year: '2021',
       period: 'Freshman year',
       title: 'Started learning web development',
       description: 'Took first CS course. Built a todo app in vanilla JavaScript. Realized I enjoyed frontend more than algorithms (for now).',
@@ -24,14 +24,14 @@ export default function Experience() {
       color: 'green'
     },
     {
-      year: '2023',
+      year: '2025',
       period: 'Fall',
-      title: 'Graduated (BS Computer Science)',
+      title: 'Graduated ( Computer Science)',
       description: 'Thesis on optimizing React re-renders. Realized frameworks are just tools — fundamentals matter more.',
       color: 'blue'
     },
     {
-      year: '2024',
+      year: '2026',
       period: 'Present',
       title: 'Building in public',
       description: 'Exploring full-stack development. Working on personal projects, writing about optimization, and mentoring junior developers.',
